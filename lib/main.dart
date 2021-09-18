@@ -63,7 +63,7 @@ class _IrregularVerbsState extends State<IrregularVerbsList>{
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("All verbs"),
+        title: Text("All Irregular Verbs"),
         actions: [IconButton(onPressed: _pushFavorite, icon: Icon(Icons.list))],
       ),
       body: _buildWordList(),

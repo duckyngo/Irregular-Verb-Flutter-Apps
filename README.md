@@ -3,6 +3,11 @@
 A simple Flutter app shows Irregular Verbs loaded from JSON, show on a ListView with Interactivity and Navigate to the favorite list screen
 
 ## Screenshots
+<p float="left">
+    <img src="screenshots/ss01.png" width="320">
+    <img src="screenshots/ss02.png" width="320">
+</p>
+
 
 ## Getting Started
 
