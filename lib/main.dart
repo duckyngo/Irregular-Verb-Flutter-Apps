@@ -1,4 +1,9 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'dart:async' show Future;
+import 'package:flutter/services.dart' show rootBundle;
+import 'package:irregular_verbs/word.dart';
 
 void main() {
   runApp(const MyApp());
@@ -58,6 +63,9 @@ class _MyHomePageState extends State<MyHomePage> {
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
       _counter++;
+
+      final future = loadIrregularVerbs();
+      future.then((value) => print(value[0].base));
     });
   }
 
@@ -111,5 +119,13 @@ class _MyHomePageState extends State<MyHomePage> {
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
+  }
+
+
+  Future<List<Word>> loadIrregularVerbs() async {
+    String data = await DefaultAssetBundle.of(context).loadString("assets/irregular_verbs.json");
+    final jsonResult = jsonDecode(data); //latest Dart
+    List<Word> posts = List<Word>.from(jsonResult.map((model)=> Word.fromJson(model)));
+    return posts;
   }
 }
