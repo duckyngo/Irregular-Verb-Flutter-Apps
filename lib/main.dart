@@ -49,6 +49,7 @@ class _IrregularVerbsState extends State<IrregularVerbsList>{
   List _irrVerbList = <Word>[];    // Create a array list of type Word
   final _savedList = <String>{};      // Create a Set of type String
   final _biggerFont = const TextStyle(fontSize: 18);
+  late ListView listView;
 
   @override
   Widget build(BuildContext context) {
@@ -59,10 +60,11 @@ class _IrregularVerbsState extends State<IrregularVerbsList>{
       })
     });
 
+
     return Scaffold(
       appBar: AppBar(
         title: Text("All verbs"),
-        actions: [IconButton(onPressed: _pushFavorite, icon: Icon(Icons.list_rounded))],
+        actions: [IconButton(onPressed: _pushFavorite, icon: Icon(Icons.list))],
       ),
       body: _buildWordList(),
     );
@@ -70,6 +72,7 @@ class _IrregularVerbsState extends State<IrregularVerbsList>{
 
   Widget _buildWordList(){
     return ListView.builder(
+      itemCount: _irrVerbList.length,
       padding: const EdgeInsets.all(16),
       itemBuilder: (BuildContext _context, int i){
         if (i.isOdd){
