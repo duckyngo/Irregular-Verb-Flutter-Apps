@@ -1,6 +1,8 @@
-# irregular_verbs
+# Irregular Verbs Flutter Apps
 
-A Flutter app shows Irregular Verbs List loaded from JSON, show on a ListView with Interactivity and Navigate to the favorite list screen
+A simple Flutter app shows Irregular Verbs loaded from JSON, show on a ListView with Interactivity and Navigate to the favorite list screen
+
+## Screenshots
 
 ## Getting Started
 
